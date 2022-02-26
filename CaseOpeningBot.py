@@ -1,10 +1,17 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
+
 from discord_webhooks import DiscordWebhooks
+
 from datetime import datetime
+
 from pyfiglet import Figlet
+
 import questionary
 from questionary import Validator, ValidationError
+
 from os import system, name
 from time import sleep
 
@@ -75,6 +82,9 @@ def chooseMode():
     ).ask()
     return answer
 
+## Main code
+
+ChromeDriverManager("2.26", log_level=0).install() # make it so webdriver_manager doesn't print logs to console
 
 f = Figlet(font='slant')
 questionary.print(f.renderText('TunesBot'), style="fg:darkred")
@@ -118,7 +128,8 @@ else:
     chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
 # Open browser
-driver = webdriver.Chrome(options=chrome_options)  # Initiate browser windows
+
+driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()), options=chrome_options) # Initiate browser windows
 driver.get("https://aimgods.finalmouse.com/auth/log-in")  # Open browser on this URL
 
 # Login
