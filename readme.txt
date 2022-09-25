@@ -1,2 +1,3 @@
-Code to create binary:
-pyinstaller --onefile --icon=bot.ico --add-data "venv\Lib\site-packages\pyfiglet;./pyfiglet" CaseOpeningBot.py
+## Finalmouse Case Opening Bot
+
+A bot that automates the final mouse case opening process.
