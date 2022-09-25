@@ -102,7 +102,7 @@ password = input(f"? Password: ")
 
 ##############################################################################
 # Discord
-discordWebhook = 'https://discord.com/api/webhooks/792858525386539048/YCw-58sqII1WeF3oRFHMkeOQMIn2P6xBk-MWPX-Y7p_kuZ0m-1Ltn9Tv38we9tGfCw1I'
+discordWebhook = # add discord webhook here
 
 webhook = DiscordWebhooks(discordWebhook)
 time = datetime.utcfromtimestamp(1609123273)
